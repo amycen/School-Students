@@ -1,9 +1,21 @@
+
+<% if flash[:message] %>
+  <h2><%= flash[:message] %></h2>
+<% end %>
+
 <h1>Schools</h1>
+
+<h3>Search by Name:</h3>
+  <%=form_tag schools_path, method: :get do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search" %>
+  <% end %>
+  
 
 <ul>
   <%@schools.each do |school|%>
     <li>
-      <%=school.name%>
+      <%= link_to school.name, school_path(school) %>
     </li>
   <%end%>
 

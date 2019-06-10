@@ -1,0 +1,20 @@
+<h1>Contact Us</h1>
+
+<% if flash[:message] %>
+    <%= flash[:message] %>
+<% end %>
+
+
+<%=form_tag support_path do %>
+    <label for="name">Name: </label>
+    <%= text_field_tag :'support[name]'%> 
+    <br>
+    <label for="email">Email: </label>
+    <%= text_field_tag :'support[email]'%>
+    <br>
+    <label for="reason">Reason: </label>
+    <%= text_field_tag :'support[reason]'%>
+    <%= submit_tag "Submit"%>
+<% end %>
+
+  

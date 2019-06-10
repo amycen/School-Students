@@ -1,0 +1,11 @@
+<h1><%= @student.name %>'s Page</h1>
+<%= link_to "Edit #{@student.name}", edit_student_path(@student)  %>
+<br>
+<h3>Name: </h3>
+<%= @student.name %>
+<h3>Age: </h3>
+<%= @student.age %>
+<h3>School: </h3>
+<%= link_to @student.school.name, school_path(@student.school) %>
+
+<br>

@@ -1,0 +1,18 @@
+<h1>Update <%= @student.name %></h1>
+
+<% if flash[:message] %>
+    <h2><%= flash[:message] %></h2>
+<% end %>
+
+<%= form_for(@student) do |f| %>
+    <%=f.label :name %>
+    <%=f.text_field :name %>
+    <br>
+    <%=f.label :age %>
+    <%=f.text_field :age %>
+    <br>
+    <%= f.collection_select( :school_id, School.all, :id, :name, prompt: true)%>
+    <br>
+    <%=f.submit "Update"%>
+<% end %>
+  
